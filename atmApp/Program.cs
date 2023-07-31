@@ -2,21 +2,73 @@
 
 public class cardHolder
 {
-    //What makes up a card holder??
+    //cardHolder attributes
+    String cardNumber;
+    int cardPin;
+    double accountBalance;
+    String firstName;
+    String lastName;
 
-    //Generate the constructor
-
+    //constructor fir cardHolder class
+    public cardHolder(int cardNumber, int cardPin, double accountBalance, String firstName, String lastName){
+        this.cardNumber = cardNumber;
+        this.cardPin = cardPin;
+        this.accountBalance = accountBalance;
+        this.firstName = firstName;
+        this.lastName = lastName;  
+    } 
+    
+    //getter methods
     public String getCardNumber()
     {
-        //generate getter for cardNumber
+        return cardNumber;
     }
-    //create the rest of the getter methods (hint: 1 per class attribute)
-
-    public void setCardNumber()
+    
+    public int getCardPin()
     {
-        // create setter for card number
+        return cardPin;
     }
-    //create the rest of the setter methods (hint: 1 per class attribute)
+
+    public double getAccountBalance()
+    {
+        return accountBalance;
+    }
+
+    public string getFirstName()
+    {
+        return firstName;
+    }
+
+    public string getLastName()
+    {
+        return lastName;
+    }
+
+    //setter methods
+    public void setCardNumber(String newCardNumber)
+    {
+        cardNumber = newCardNumber;
+    }
+    
+    public void setCardPin(int newCardPin)
+    {
+        cardPin = newCardPin;
+    }
+
+    public void setAccountBalance(double newAccountBalance)
+    {
+        accountBalance = newAccountBalance;
+    }
+
+    public void setFistName(String newFistName)
+    {
+        firstName = newFistName;
+    }
+
+    public void setLastName(string newLastName)
+    {
+        lastName = newLastName;
+    }
 
     public static void Main(String[] args)
     {
