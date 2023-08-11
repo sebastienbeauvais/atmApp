@@ -130,7 +130,11 @@ public class cardHolder
 
         // creating a list of cardholders
         List<cardHolder> cardHolders = new List<cardHolder>();
-        cardHolders.Add(new cardHolder(/*properties*/));
+        cardHolders.Add(new cardHolder(1112223334445555, 1234, 10990.86, "John", "Smith"));
+        cardHolders.Add(new cardHolder(1234123412341234, 1122, 17790.32, "Felicia", "Jones"));
+        cardHolders.Add(new cardHolder(1212343456567878, 3357, 124765.11, "Rich", "Gregor"));
+        cardHolders.Add(new cardHolder(9900828237561237, 4589, 723.06, "Alice", "Jones"));
+        cardHolders.Add(new cardHolder(3452567935722454, 8573, 1029374.83, "Rebecca", "Robbles"));
 
         //Prompt user
         Console.WriteLine("Welcome to the ATM APP!");
@@ -154,7 +158,10 @@ public class cardHolder
                 }
                 //break out of loop if not null
             }
-            catch{ Console.WriteLine("Card not recognized. Try again."); }
+            catch (Exception e)
+            { 
+                Console.WriteLine(e.Message); 
+            }
 
         }
 
@@ -167,13 +174,22 @@ public class cardHolder
                 int cardPin = int.Parse(Console.ReadLine());
                 //if the current user getPin function returns something that matches cardPin, break
                 //break out of loop if not null
+                if(currentUser.getCardPin == currentUser.cardPin) {
+                    Console.WriteLine("Thank you, pin authenticated.")
+                }
+                else {
+                    Console.WriteLine("Pin incorrect. Try again.")
+                }
             }
-            catch{ Console.WriteLine("Incorrect pin. Try again."); }
+            catch (Exception e)
+            { 
+                Console.WriteLine(e.Message); 
+            }
 
         }
 
         // Greet user
-        Console.WriteLine("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName());
+        string greetUser = Console.WriteLine("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName());
     }
 
 }
