@@ -5,41 +5,41 @@ public class cardHolder
     //cardHolder attributes
     String cardNumber;
     int cardPin;
-    double accountBalance;
+    double balance;
     String firstName;
     String lastName;
 
-    //constructor fir cardHolder class
-    public cardHolder(int cardNumber, int cardPin, double accountBalance, String firstName, String lastName){
+    //constructor for cardHolder class
+    public cardHolder(String cardNumber, int cardPin, double balance, String firstName, String lastName){
         this.cardNumber = cardNumber;
         this.cardPin = cardPin;
-        this.accountBalance = accountBalance;
+        this.balance = balance;
         this.firstName = firstName;
         this.lastName = lastName;  
     } 
     
     //getter methods
-    public String getCardNumber()
+    public String getNum() //get the card number
     {
         return cardNumber;
     }
     
-    public int getCardPin()
+    public int getPin() //get card pin number
     {
         return cardPin;
     }
 
-    public double getAccountBalance()
+    public double getBalance() // get account balance
     {
-        return accountBalance;
+        return balance;
     }
 
-    public string getFirstName()
+    public string getFirstName() //get first name
     {
         return firstName;
     }
 
-    public string getLastName()
+    public string getLastName() // get last name
     {
         return lastName;
     }
@@ -55,9 +55,9 @@ public class cardHolder
         cardPin = newCardPin;
     }
 
-    public void setAccountBalance(double newAccountBalance)
+    public void setBalance(double newAccountBalance)
     {
-        accountBalance = newAccountBalance;
+        balance = newAccountBalance;
     }
 
     public void setFistName(String newFistName)
@@ -65,7 +65,7 @@ public class cardHolder
         firstName = newFistName;
     }
 
-    public void setLastName(string newLastName)
+    public void setLastName(String newLastName)
     {
         lastName = newLastName;
     }
@@ -79,7 +79,7 @@ public class cardHolder
             Console.WriteLine("1. Make a deposit");
             Console.WriteLine("2. Make a withdrawal");
             Console.WriteLine("3. Check account balance");
-            Console.WriteLine("4. Exit")
+            Console.WriteLine("4. Exit");
         }
 
         void deposit(cardHolder currentUser)
@@ -90,6 +90,8 @@ public class cardHolder
             try
             {
                 double deposit = double.Parse(Console.ReadLine());
+                currentUser.setBalance(deposit);
+                Console.WriteLine("Thank you for your deposit. Your new account balance is " + currentUser.getBalance());
             }
             catch (Exception e)
             {
@@ -100,20 +102,21 @@ public class cardHolder
         void withdraw(cardHolder currentUser)
         {
             //logic to make a widthdraw.
-            //parse readline for widthdrawAmount and subtrack from current totalAmount
+            //parse readline for widthdrawalAmount and subtrack from current totalAmount
             Console.WriteLine("How much would you like to withdraw: ");
             try
             {
-                double withdraw = double.Parse(Console.ReadLine());
-                if (withdraw > currentUser.accountBalance)
+                double withdrawal = double.Parse(Console.ReadLine());
+                // Check if user has enough money
+                if (withdrawal > currentUser.getBalance())
                 {
-                    console.WriteLine("Not enough funds to make withdrawal.");
+                    Console.WriteLine("Not enough funds to make withdrawal.");
                 }
                 else
                 {
-                    currentUser.accountBalance = currentUser.accountBalance - withdraw;
-                    Console.WriteLine("Your new account balance is: " + currentUser.accountBalance);
-                    Console.WriteLine("Please take your widthdrawal of " + withdraw + "from the tray below.");
+                    currentUser.setBalance(currentUser.getBalance() - withdrawal);
+                    Console.WriteLine("Your new account balance is: " + currentUser.getBalance());
+                    Console.WriteLine("Please take your withdrawal of " + withdraw + "from the tray below.");
                 }
             }
             catch (Exception e)
@@ -125,21 +128,21 @@ public class cardHolder
         void checkFunds(cardHolder currentUser)
         {
             //print current funds are return to menu
-            Console.WriteLine("Your account balance is: " + currentUser.accountBalance);
+            Console.WriteLine("Your account balance is: " + currentUser.getBalance());
         }
 
         // creating a list of cardholders
         List<cardHolder> cardHolders = new List<cardHolder>();
-        cardHolders.Add(new cardHolder(1112223334445555, 1234, 10990.86, "John", "Smith"));
-        cardHolders.Add(new cardHolder(1234123412341234, 1122, 17790.32, "Felicia", "Jones"));
-        cardHolders.Add(new cardHolder(1212343456567878, 3357, 124765.11, "Rich", "Gregor"));
-        cardHolders.Add(new cardHolder(9900828237561237, 4589, 723.06, "Alice", "Jones"));
-        cardHolders.Add(new cardHolder(3452567935722454, 8573, 1029374.83, "Rebecca", "Robbles"));
+        cardHolders.Add(new cardHolder("1112223334445555", 1234, 10990.86, "John", "Smith"));
+        cardHolders.Add(new cardHolder("1234123412341234", 1122, 17790.32, "Felicia", "Jones"));
+        cardHolders.Add(new cardHolder("1212343456567878", 3357, 124765.11, "Rich", "Gregor"));
+        cardHolders.Add(new cardHolder("9900828237561237", 4589, 723.06, "Alice", "Jones"));
+        cardHolders.Add(new cardHolder("3452567935722454", 8573, 1029374.83, "Rebecca", "Robbles"));
 
         //Prompt user
         Console.WriteLine("Welcome to the ATM APP!");
         Console.WriteLine("Please enter your credit card: ");
-        //string debitCardNum = "";
+        string debitCardNum = "";
         cardHolder currentUser;
 
         // logic to login
@@ -147,13 +150,13 @@ public class cardHolder
         {
             try
             {
-                String debitCardNum = Console.ReadLine();
+                debitCardNum = Console.ReadLine();
                 //check against list of users
                 currentUser = cardHolders.FirstOrDefault(a => a.cardNumber == debitCardNum);
                 if(currentUser != null) {
                     break;
                 }
-                else{
+                else {
                     Console.WriteLine("Card not recognized. Try again.");
                 }
                 //break out of loop if not null
@@ -167,18 +170,20 @@ public class cardHolder
 
         // logic for the user pin validation
         Console.WriteLine("Please enter your pin: ");
+        int cardPin = 0;
         while(true)
         {
             try
             {
-                int cardPin = int.Parse(Console.ReadLine());
+                cardPin = int.Parse(Console.ReadLine());
                 //if the current user getPin function returns something that matches cardPin, break
                 //break out of loop if not null
-                if(currentUser.getCardPin == currentUser.cardPin) {
-                    Console.WriteLine("Thank you, pin authenticated.")
+                if(currentUser.getPin() == cardPin) {
+                    Console.WriteLine("Thank you, pin authenticated.");
+                    break;
                 }
                 else {
-                    Console.WriteLine("Pin incorrect. Try again.")
+                    Console.WriteLine("Pin incorrect. Try again.");
                 }
             }
             catch (Exception e)
@@ -190,6 +195,37 @@ public class cardHolder
 
         // Greet user
         string greetUser = Console.WriteLine("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName());
+        int option = 0;
+
+        do
+        {
+            printMenuOptions();
+            try
+            {
+                option = int.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            if (option == 1) {
+                deposit(currentUser);
+            }
+            else if (option == 2) {
+                withdraw(currentUser);
+            }
+            else if(option == 3) {
+                checkFunds(currentUser);
+            }
+            else if (option == 4) {
+                break;
+            }
+            else {
+                option == 0;
+            }
+        }
+        while (option != 4);
+        Console.WriteLine("Thank you, have a nice day!");
     }
 
 }
