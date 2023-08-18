@@ -10,7 +10,7 @@ public class cardHolder
     String lastName;
 
     //constructor fir cardHolder class
-    public cardHolder(int cardNumber, int cardPin, double accountBalance, String firstName, String lastName){
+    public cardHolder(String cardNumber, int cardPin, double accountBalance, String firstName, String lastName){
         this.cardNumber = cardNumber;
         this.cardPin = cardPin;
         this.accountBalance = accountBalance;
@@ -74,7 +74,11 @@ public class cardHolder
     {
         void printMenuOptions()
         {
-            //print the menu options for user (hint: what can you do at an ATM?)
+            Console.WriteLine("Please pick and option from the menu: ");
+            Console.WriteLine("1. Make a Deposit");
+            Console.WriteLine("2. Make a Withdrawal");
+            Console.WriteLine("3. Check Available Balance");
+            Console.WriteLine("4. Exit");
         }
 
         void deposit()
@@ -83,7 +87,7 @@ public class cardHolder
             //parse readLine for deposit amount
         }
 
-        void widthdraw()
+        void withdraw()
         {
             //logic to make a widthdraw.
             //parse readline for widthdrawAmount and subtrack from current totalAmount
@@ -138,8 +142,9 @@ public class cardHolder
 
         }
 
-        // Greet user
+        // Greet user and give a list of options
         Console.WriteLine("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName());
+        printMenuOptions();
     }
 
 }
