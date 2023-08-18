@@ -1,0 +1,5 @@
+/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/obj/Debug/net7.0/atmApp.csproj.AssemblyReference.cache
+/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/obj/Debug/net7.0/atmApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/obj/Debug/net7.0/atmApp.AssemblyInfoInputs.cache
+/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/obj/Debug/net7.0/atmApp.AssemblyInfo.cs
+/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/obj/Debug/net7.0/atmApp.csproj.CoreCompileInputs.cache
