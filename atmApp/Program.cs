@@ -194,7 +194,7 @@ public class cardHolder
         }
 
         // Greet user
-        string greetUser = Console.WriteLine("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName());
+        Console.WriteLine("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName());
         int option = 0;
 
         do
@@ -221,7 +221,7 @@ public class cardHolder
                 break;
             }
             else {
-                option == 0;
+                option = 0;
             }
         }
         while (option != 4);

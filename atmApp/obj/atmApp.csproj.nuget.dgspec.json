@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/atmApp.csproj": {}
+    "/Users/sbeauvais/Desktop/Personal_Projects/Easy/atmApp/atmApp/atmApp.csproj": {}
   },
   "projects": {
-    "/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/atmApp.csproj": {
+    "/Users/sbeauvais/Desktop/Personal_Projects/Easy/atmApp/atmApp/atmApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/atmApp.csproj",
+        "projectUniqueName": "/Users/sbeauvais/Desktop/Personal_Projects/Easy/atmApp/atmApp/atmApp.csproj",
         "projectName": "atmApp",
-        "projectPath": "/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/atmApp.csproj",
+        "projectPath": "/Users/sbeauvais/Desktop/Personal_Projects/Easy/atmApp/atmApp/atmApp.csproj",
         "packagesPath": "/Users/sbeauvais/.nuget/packages/",
-        "outputPath": "/Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/obj/",
+        "outputPath": "/Users/sbeauvais/Desktop/Personal_Projects/Easy/atmApp/atmApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/sbeauvais/.nuget/NuGet/NuGet.Config"

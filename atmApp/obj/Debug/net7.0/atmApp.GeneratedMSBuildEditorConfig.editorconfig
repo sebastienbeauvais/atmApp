@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = atmApp
-build_property.ProjectDir = /Users/sbeauvais/Desktop/Personal_Projects/Easy/Atm_App/atmApp/
+build_property.ProjectDir = /Users/sbeauvais/Desktop/Personal_Projects/Easy/atmApp/atmApp/
